@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import channel from './services/channel.js'
+import channel from './services/channelServe.js'
 
 async function test() {
   var channels = await channel.getChannels();
   console.log('channels: ', channels);
 }
-
 test();
 
 
