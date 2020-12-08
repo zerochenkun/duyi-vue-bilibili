@@ -1,35 +1,31 @@
 <template>
-  <div>
-    <div style="width: 100px; height: 30px; border: 1px solid red">
-      <Item :isActive="curActive === 'cartoon'" @activeItem="curActive = 'cartoon'"> 全部 </Item>
-      <!-- <Item :isActive="false"> asdf </Item> -->
-    </div>
-    <div style="width: 100px; height: 30px; border: 1px solid red">
-      <Item :isActive="curActive === 'e-sports'" @activeItem="curActive = 'e-sports'">
-        动漫</Item
+  <title-menu :isActive="selected" @activeItem="test">
+    <template v-slot:title>
+      <!-- 给title具名插槽传递内容 -->
+      发现频道
+    </template>
+     <template v-slot:icon>
       >
-    </div>
-  </div>
+    </template>
+  </title-menu>
 </template>
 
 <script>
-import Item from "./components/Item.vue";
+import TitleMenu from "./components/TitleMenu.vue";
 export default {
   name: "App",
   components: {
-    Item,
+    TitleMenu,
   },
   data() {
     return {
-      curActive: "",
+      selected: false,
     };
   },
   methods: {
-    doSomething(e) {
+    test(e) {
       console.log("e: ", e);
     },
   },
 };
 </script>
-
-<style></style>
