@@ -1,6 +1,6 @@
 <template>
 <div>
-  <title-menu :isActive="selected" @activeItem="test">
+  <title-menu :isActive="activeId === 100" @activeItem="activeId = 100">
     <template v-slot:title>
       <!-- 给title具名插槽传递内容 -->
       发现频道
@@ -9,7 +9,7 @@
       >
     </template>
   </title-menu>
-  <ChannelList  :data="{name:'动漫',channel_count:'222'}" />
+  <ChannelList  :activeId="activeId" @activeItem="activeId = $event" />
 </div>
 </template>
 
@@ -26,12 +26,8 @@ export default {
   data() {
     return {
       selected: false,
+      activeId: 100
     };
-  },
-  methods: {
-    test(e) {
-      console.log("e: ", e);
-    },
-  },
+  }
 };
 </script>

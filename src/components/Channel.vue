@@ -1,6 +1,6 @@
 <template>
   <div class="channel">
-    <Item :isActive="isActive" @activeItem="$emit('activeItem')">
+    <Item :isActive="isActive" @active="$emit('activeItem')">
       <div class="inner">
         <div class="left">
           <span class="channel-name">{{data.name}}</span>
@@ -29,12 +29,7 @@ export default {
         type:Object,
         default:() => ({})
     }
-  },
-  methods: {
-    handleClick() {
-      this.$emit("activeItem");
-    },
-  },
+  }
 };
 </script>
 
