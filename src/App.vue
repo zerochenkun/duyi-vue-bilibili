@@ -1,6 +1,6 @@
 <template>
 <div>
-  <title-menu :isActive="activeId === 100" @activeItem="activeId = 100">
+  <title-menu :isActive="activeId === 100" @active="activeId = 0">
     <template v-slot:title>
       <!-- 给title具名插槽传递内容 -->
       发现频道
@@ -9,7 +9,7 @@
       >
     </template>
   </title-menu>
-  <ChannelList  :activeId="activeId" @activeItem="activeId = $event" />
+  <ChannelList  :activeId="activeId" @active="activeId = $event" />
 </div>
 </template>
 

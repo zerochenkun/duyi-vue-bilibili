@@ -1,13 +1,9 @@
 <template>
   <div class="channel">
-    <Item :isActive="isActive" @active="$emit('activeItem')">
+    <Item :isActive="isActive" @active="$emit('active')">
       <div class="inner">
-        <div class="left">
           <span class="channel-name">{{data.name}}</span>
-        </div>
-        <div class="right">
           <span class="channel-num">{{data.channel_count}}</span>
-        </div>
       </div>
     </Item>
   </div>

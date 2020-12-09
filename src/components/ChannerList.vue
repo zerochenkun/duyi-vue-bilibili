@@ -1,7 +1,7 @@
 <template>
   <div class="channel-list">
     <div class="item" v-for="item in channels" :key="item.id">
-      <Channel @active="$emit('activeItem',item.id)"
+      <Channel @active="$emit('active',item.id)"
                 :isActive="item.id === activeId" 
                 :data="item" />
     </div>
